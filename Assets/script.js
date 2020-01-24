@@ -11,7 +11,6 @@ const passwordGenerator = function (passLength) {
   }
   console.log("After while loop : " + charAmt)
 
-  //TODO: Make sure at least one datatype is selected.
   includeUpper = confirm("Include Uppercase Characters? Ok for Yes, cancel for No.")
   console.log("Include Uppercase : " + includeUpper)
   includeLower = confirm("Include Lowercase Characters? Ok for Yes, cancel for No.")
@@ -20,16 +19,14 @@ const passwordGenerator = function (passLength) {
   console.log("Include Numbers : " + includeNumbers)
   includeSpecial = confirm("Include Special Characters? Ok for Yes, Cancel for No.")
   console.log("Include Special : " + includeSpecial)
+
   if (charAmt)
-    //TODO: Make sure at least one datatype is selected.
-    //something along the lines of this? :  
     if (includeLower === false
       && includeNumbers === false
       && includeUpper === false &&
       includeSpecial === false) {
       passwordGenerator()
     }
-  // stop todo
 
   var len = (passLength) ? (passLength) : (charAmt)
   let lower = 'abcdefghijklmnopqrstuvwxyz'
@@ -56,7 +53,6 @@ const passwordGenerator = function (passLength) {
       generateSpecial = Math.floor(special.length * Math.random())
       characters += special.charAt(generateSpecial)
     }
-
     password = characters
   }
   password = password.split('').sort(function () {
@@ -64,7 +60,6 @@ const passwordGenerator = function (passLength) {
   }).join('')
   return password.substr(0, charAmt)
 }
-
 
 // console.log(passwordGenerator.length)
 document.getElementById('generate-pwd').addEventListener("click", function () {
