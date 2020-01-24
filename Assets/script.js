@@ -23,12 +23,15 @@ const passwordGenerator = function (passLength) {
   if (charAmt)
     //TODO: Make sure at least one datatype is selected.
     //something along the lines of this? :  
-    //   if (includeLower && includeNumbers && includeUpper && includeSpecial = false) {
+    if (includeLower === false
+      && includeNumbers === false
+      && includeUpper === false &&
+      includeSpecial === false) {
+      passwordGenerator()
+    }
+  // stop todo
 
-    //  }
-    // stop todo
-
-    let len = (passLength) ? (passLength) : (charAmt)
+  var len = (passLength) ? (passLength) : (charAmt)
   let lower = 'abcdefghijklmnopqrstuvwxyz'
   let upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   let number = '0123456789'
